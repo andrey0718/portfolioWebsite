@@ -1,0 +1,303 @@
+/* ====== Base Reset ====== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root{
+  --bg: #0b0f14;
+  --text: #e6edf3;
+  --muted: rgba(230,237,243,.72);
+  --border: rgba(230,237,243,.10);
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+  --accent: #6ee7ff;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(110,231,255,.08), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.10), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ====== Header / Nav ====== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,20,.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  font-weight: 750;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-links a{
+  margin-left: 14px;
+  text-decoration: none;
+  color: var(--text);
+  opacity: .78;
+  font-size: 14px;
+  transition: transform .18s ease, color .18s ease, opacity .18s ease;
+}
+
+.nav-links a:hover{
+  opacity: 1;
+  color: var(--accent);
+}
+
+.nav-links a.active{
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ====== Layout ====== */
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 54px 18px 70px;
+}
+
+.section{
+  padding: 54px 0;
+}
+
+.divider{
+  margin-top: 44px;
+  border-top: 1px solid var(--border);
+}
+
+/* ====== Typography ====== */
+.title{
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 0 0 12px 0;
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+}
+
+.accent-dot{
+  color: var(--accent);
+}
+
+.subtitle{
+  font-size: 18px;
+  margin: 0;
+  max-width: 720px;
+  color: var(--muted);
+}
+
+.heading{
+  font-size: 22px;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.2px;
+}
+
+/* ====== Cards ====== */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.card-dates{
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ====== Tags ====== */
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  color: rgba(230,237,243,.85);
+  transition: transform .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.tag:hover{
+  transform: translateY(-2px);
+  border-color: rgba(110,231,255,.35);
+  color: var(--accent);
+}
+
+/* ====== Contact buttons ====== */
+.contact-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0b0f14;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease, background .18s ease;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(110,231,255,.25);
+}
+
+.btn:active{
+  transform: translateY(-1px);
+}
+
+/* ====== Footer ====== */
+.footer{
+  border-top: 1px solid var(--border);
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ====== Scroll reveal ====== */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== Vertical Experience Layout ====== */
+
+.exp-vertical{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-block{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease, background .18s ease;
+}
+
+.exp-block:hover{
+  transform: translateY(-1px);
+  border-color: rgba(110,231,255,.22);
+}
+
+.exp-block.open{
+  border-color: rgba(110,231,255,.55);
+  background: rgba(110,231,255,.06);
+}
+
+.exp-row{
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 44px 1fr 18px;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  color: var(--text);
+  text-align: left;
+}
+
+.exp-row:focus{
+  outline: 2px solid rgba(110,231,255,.45);
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
+.exp-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  font-size: 20px;
+}
+
+.exp-name{
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+.exp-chevron{
+  opacity: .75;
+  font-size: 20px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.exp-block.open .exp-chevron{
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* ✅ KEY FIX:
+   Panels MUST be hidden by default and only show when .open is present.
+   Using !important makes sure no older styles override this. */
+.exp-panel{
+  display: none !important;
+  padding: 0 14px 14px 72px; /* aligns details under the text */
+}
+
+.exp-block.open .exp-panel{
+  display: block !important;
+}
+
+.exp-title{
+  margin: 4px 0 4px;
+  font-size: 16px;
+}
+
+/* ====== Reduced Motion ====== */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior: auto; }
+  .reveal { transition: none; transform: none; opacity: 1; }
+  .tag, .btn, .nav-links a, .exp-block { transition: none; }
+  .tag:hover, .btn:hover, .exp-block:hover { transform: none; }
+}
+
+/* ====== Mobile tweaks ====== */
+@media (max-width: 520px){
+  .nav-links a { margin-left: 10px; }
+  .container { padding-top: 34px; }
+  .exp-panel { padding-left: 14px; } /* more compact on small screens */
+}
