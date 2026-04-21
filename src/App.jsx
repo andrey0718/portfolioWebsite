@@ -94,11 +94,11 @@ function App() {
           </h1>
 
           <p className="subtitle">
-            I’m a 18 year old student and developer focused on building clean,
+            I’m an 18-year-old student and developer focused on building clean,
             reliable web applications. I currently live in Clearwater, Florida.
             I have been learning to develop software for about a year now. I
-            focus on learning the basics adding to my mental toolbox that I will
-            be able to apply to any problem thrown my way.
+            Focus on learning the basics, adding to my mental toolbox, so that I will use
+            this foundation helps me tackle any problem that comes my way.
           </p>
 
           <div className="divider"></div>
@@ -108,10 +108,12 @@ function App() {
           <h2 className="heading">Work Experience</h2>
 
           <p className="subtitle" style={{ marginBottom: "22px" }}>
-            I am Currently a Student at St Petersburg college Wrapping up my associates 
-            Degree and working on projects to build my resume and portfolio. While in school
-            I currentyl work at panda express and am aiming to get internships and job offers. I am excited to head over 
-            To USF exposing me to a new network of people and more in depth learning. 
+            I am currently a Student at St Petersburg College, wrapping up my associate's degree. 
+            I am working on projects to build my resume and portfolio. While in school
+            I currently work at Panda Express and am aiming to secure internships and job offers. I am excited to head over 
+            To USF, exposing me to a new network of people and more in-depth learning. 
+
+
           </p>
 
           <div className="exp-vertical">
@@ -223,31 +225,34 @@ function App() {
             conversations. Feel free to reach out.
           </p>
 
-          <div className="contact-buttons">
-            <a
-              className="btn"
-              href="https://github.com/YOUR_GITHUB"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+         <div className="contact-buttons">
+  <a
+    className="btn"
+    href="https://github.com/andrey0718"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
 
-            <a
-              className="btn"
-              href="https://www.linkedin.com/in/YOUR_LINKEDIN"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
+  <a
+    className="btn"
+    href="https://www.linkedin.com/in/andrey-ivanov-a732292a8"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn
+  </a>
 
-            <a className="btn" href="mailto:your.email@example.com">
-              Email
-            </a>
-          </div>
-        </section>
-      </main>
+  <a
+    className="btn"
+    href="mailto:andrey.ivano22@gmail.com"
+  >
+    Email
+  </a>
+</div>
+</section>
+</main>
 
       <footer className="footer">
         <p>
