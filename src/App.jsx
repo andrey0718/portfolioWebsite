@@ -94,11 +94,12 @@ function App() {
           </h1>
 
           <p className="subtitle">
-            I’m an 18-year-old student and developer focused on building clean,
-            reliable web applications. I currently live in Clearwater, Florida.
-            I have been learning to develop software for about a year now. I
-            Focus on learning the basics, adding to my mental toolbox, so that I will use
-            this foundation helps me tackle any problem that comes my way.
+          I’m an 18-year-old student and developer focused on building clean, reliable web applications.
+          I currently live in Clearwater, Florida. I have been learning to develop software for about a year now.
+          I focus on learning the basics, adding to my mental toolbox, so that I will use this foundation to tackle
+          any problem that comes my way.
+
+
           </p>
 
           <div className="divider"></div>
@@ -109,9 +110,11 @@ function App() {
 
           <p className="subtitle" style={{ marginBottom: "22px" }}>
             I am currently a Student at St Petersburg College, wrapping up my associate's degree. 
-            I am working on projects to build my resume and portfolio. While in school
-            I currently work at Panda Express and am aiming to secure internships and job offers. I am excited to head over 
-            To USF, exposing me to a new network of people and more in-depth learning. 
+            I am working on projects to build my resume and portfolio. While in school, I currently 
+            work at Panda Express and am aiming to secure internships and job offers. I am excited 
+            to head over to USF, exposing me to a new network of people and more in-depth learning.
+
+
 
 
           </p>
