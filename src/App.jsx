@@ -1,11 +1,72 @@
 import { useEffect, useState } from "react";
+import {
+  SiC,
+  SiCplusplus,
+  SiDjango,
+  SiDocker,
+  SiGit,
+  SiHtml5,
+  SiKubernetes,
+  SiPython,
+  SiReact,
+  SiVim,
+  SiVuedotjs,
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
+import qleetLogo from "./assets/qleet-logo.svg";
+import usfLogo from "./assets/usf-logo.svg";
+import spcLogo from "./assets/spc-logo.png";
+
+const technologies = [
+  { name: "Python", Icon: SiPython },
+  { name: "Django", Icon: SiDjango },
+  { name: "C", Icon: SiC },
+  { name: "C++", Icon: SiCplusplus },
+  { name: "Go", Icon: FaGolang, wide: true },
+  { name: "SQL", Icon: FaDatabase },
+  { name: "Docker", Icon: SiDocker },
+  { name: "Kubernetes", Icon: SiKubernetes },
+  { name: "Git", Icon: SiGit },
+  { name: "Vim", Icon: SiVim },
+  { name: "HTML", Icon: SiHtml5 },
+  { name: "React", Icon: SiReact },
+  { name: "Vue", Icon: SiVuedotjs },
+];
+
+const experiences = [
+  {
+    id: "qleet",
+    logo: qleetLogo,
+    role: "Software Developer Intern",
+    org: "Qleet",
+    dates: "2026 – Present",
+    detail: "Working mainly on the front-end UI and fixing backend bugs.",
+  },
+  {
+    id: "usf",
+    logo: usfLogo,
+    light: true,
+    role: "Student, B.S. Computer Science",
+    org: "University of South Florida",
+    dates: "2026 – Present",
+    detail: "Working toward my bachelor’s degree in Computer Science.",
+  },
+  {
+    id: "spc",
+    logo: spcLogo,
+    light: true,
+    role: "Student",
+    org: "St. Petersburg College",
+    dates: "2024 – 2026",
+    detail: "Completed my associate’s degree.",
+  },
+];
 
 function App() {
   const [openItems, setOpenItems] = useState({
-    subway: false,
-    panda: false,
-    detailing: false,
-    amazon: false,
+    qleet: false,
+    usf: false,
     spc: false,
   });
 
@@ -94,12 +155,17 @@ function App() {
           </h1>
 
           <p className="subtitle">
-          I’m an 18-year-old student and developer focused on building clean, reliable web applications.
-          I currently live in Clearwater, Florida. I have been learning to develop software for about a year now.
-          I focus on learning the basics, adding to my mental toolbox, so that I will use this foundation to tackle
-          any problem that comes my way.
+            I’m a 19-year-old student and developer in Clearwater, Florida,
+            focused on building clean, reliable web applications. I’m studying
+            Computer Science at the University of South Florida and working as
+            a Software Developer Intern at Qleet.
+          </p>
 
-
+          <p className="subtitle">
+            I started building projects in my junior year of high school in
+            2024. I focus on learning the basics and adding to my mental
+            toolbox, so I can use that foundation to tackle any problem that
+            comes my way.
           </p>
 
           <div className="divider"></div>
@@ -109,113 +175,78 @@ function App() {
           <h2 className="heading">Work Experience</h2>
 
           <p className="subtitle" style={{ marginBottom: "22px" }}>
-            I am currently a Student at St Petersburg College, wrapping up my associate's degree. 
-            I am working on projects to build my resume and portfolio. While in school, I currently 
-            work at Panda Express and am aiming to secure internships and job offers. I am excited 
-            to head over to USF, exposing me to a new network of people and more in-depth learning.
-
-
-
-
+            I am currently a student at the University of South Florida, working toward my bachelor's
+            degree in Computer Science. Alongside school, I work as a Software Developer Intern at
+            Qleet and keep building projects to grow my resume and portfolio.
           </p>
 
           <div className="exp-vertical">
-            <div className={`exp-block ${openItems.subway ? "open" : ""}`}>
-              <button
-                className="exp-row"
-                type="button"
-                aria-expanded={openItems.subway}
-                onClick={() => toggleItem("subway")}
-              >
-                <span className="exp-icon" aria-hidden="true">
-                  🥪
-                </span>
-                <span className="exp-name">Subway</span>
-                <span className="exp-chevron" aria-hidden="true">
-                  ›
-                </span>
-              </button>
-
+            {experiences.map((exp) => (
               <div
-                className="exp-panel"
-                aria-hidden={!openItems.subway}
+                className={`exp-block ${openItems[exp.id] ? "open" : ""}`}
+                key={exp.id}
               >
-                <h3 className="exp-title">Sandwich artist — Subway</h3>
-                <p className="card-dates">September 2023 – May 2025</p>
+                <button
+                  className="exp-row"
+                  type="button"
+                  id={`exp-${exp.id}-button`}
+                  aria-expanded={openItems[exp.id]}
+                  aria-controls={`exp-${exp.id}-panel`}
+                  onClick={() => toggleItem(exp.id)}
+                >
+                  <span
+                    className={`exp-icon exp-icon--logo${
+                      exp.light ? " exp-icon--light" : ""
+                    }`}
+                    aria-hidden="true"
+                  >
+                    <img src={exp.logo} alt="" />
+                  </span>
+                  <span className="exp-text">
+                    <span className="exp-name">{exp.role}</span>
+                    <span className="exp-meta">
+                      {exp.org} · {exp.dates}
+                    </span>
+                  </span>
+                  <span className="exp-chevron" aria-hidden="true">
+                    ›
+                  </span>
+                </button>
+
+                <div
+                  className="exp-panel"
+                  id={`exp-${exp.id}-panel`}
+                  role="region"
+                  aria-labelledby={`exp-${exp.id}-button`}
+                >
+                  <p className="exp-detail">{exp.detail}</p>
+                </div>
               </div>
-            </div>
-
-            <div className={`exp-block ${openItems.panda ? "open" : ""}`}>
-              <button
-                className="exp-row"
-                type="button"
-                aria-expanded={openItems.panda}
-                onClick={() => toggleItem("panda")}
-              >
-                <span className="exp-icon" aria-hidden="true">
-                  🥡
-                </span>
-                <span className="exp-name">Panda Express</span>
-                <span className="exp-chevron" aria-hidden="true">
-                  ›
-                </span>
-              </button>
-
-              <div
-                className="exp-panel"
-                aria-hidden={!openItems.panda}
-              >
-                <h3 className="exp-title">Cook — Panda Express</h3>
-                <p className="card-dates">June 2025 – Present</p>
-              </div>
-            </div>
-
-            
-
-            <div className={`exp-block ${openItems.spc ? "open" : ""}`}>
-              <button
-                className="exp-row"
-                type="button"
-                aria-expanded={openItems.spc}
-                onClick={() => toggleItem("spc")}
-              >
-                <span className="exp-icon" aria-hidden="true">
-                  🎓
-                </span>
-                <span className="exp-name">St. Petersburg College</span>
-                <span className="exp-chevron" aria-hidden="true">
-                  ›
-                </span>
-              </button>
-
-              <div
-                className="exp-panel"
-                aria-hidden={!openItems.spc}
-              >
-                <h3 className="exp-title">
-                  Student — St. Petersburg College
-                </h3>
-                <p className="card-dates">2024 – Present</p>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="divider"></div>
         </section>
 
         <section id="tech" className="section reveal">
-          <h2 className="heading">Technologies</h2>
+          <h2 className="heading">Technologies 💻</h2>
 
-          <div className="tags">
-            <span className="tag">Python</span>
-            <span className="tag">Django</span>
-            <span className="tag">C++</span>
-            <span className="tag">Git</span>
-            <span className="tag">HTML</span>
-            <span className="tag">React</span>
-            <span className="tag">Vue</span>
-
-          </div>
+          <ul className="tech-grid">
+            {technologies.map((tech) => {
+              const Icon = tech.Icon;
+              return (
+                <li className="tech-item" key={tech.name}>
+                  <span className="tech-icon-slot">
+                    <Icon
+                      className={`tech-icon${tech.wide ? " tech-icon--wide" : ""}`}
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <span>{tech.name}</span>
+                </li>
+              );
+            })}
+          </ul>
 
           <div className="divider"></div>
         </section>
@@ -248,7 +279,7 @@ function App() {
   </a>
 
   <a
-    className="btn"
+    className="btn btn--primary"
     href="mailto:andrey.ivano22@gmail.com"
   >
     Email
