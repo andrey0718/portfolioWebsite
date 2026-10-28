@@ -41,7 +41,6 @@ const experiences = [
     role: "Software Developer Intern",
     org: "Qleet",
     dates: "2026 – Present",
-    detail: "Working mainly on the front-end UI and fixing backend bugs.",
   },
   {
     id: "usf",
@@ -50,7 +49,6 @@ const experiences = [
     role: "Student, B.S. Computer Science",
     org: "University of South Florida",
     dates: "2026 – Present",
-    detail: "Working toward my bachelor’s degree in Computer Science.",
   },
   {
     id: "spc",
@@ -59,7 +57,6 @@ const experiences = [
     role: "Student",
     org: "St. Petersburg College",
     dates: "2024 – 2026",
-    detail: "Completed my associate’s degree.",
   },
 ];
 
@@ -214,7 +211,6 @@ function App() {
                   aria-labelledby={`exp-${exp.id}-button`}
                 >
                   <p className="exp-dates">{exp.dates}</p>
-                  <p className="exp-detail">{exp.detail}</p>
                 </div>
               </div>
             ))}

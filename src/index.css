@@ -326,7 +326,7 @@ body{
 }
 
 .exp-dates{
-  margin: 0 0 4px;
+  margin: 0;
   color: var(--muted);
   font-size: 14px;
 }
@@ -358,11 +358,6 @@ body{
   display: block !important;
 }
 
-.exp-detail{
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-}
 
 /* ====== Reduced Motion ====== */
 @media (prefers-reduced-motion: reduce){
