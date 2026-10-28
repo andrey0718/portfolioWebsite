@@ -198,16 +198,10 @@ function App() {
                     className={`exp-icon exp-icon--logo${
                       exp.light ? " exp-icon--light" : ""
                     }`}
-                    aria-hidden="true"
                   >
-                    <img src={exp.logo} alt="" />
+                    <img src={exp.logo} alt={exp.org} />
                   </span>
-                  <span className="exp-text">
-                    <span className="exp-name">{exp.role}</span>
-                    <span className="exp-meta">
-                      {exp.org} · {exp.dates}
-                    </span>
-                  </span>
+                  <span className="exp-name">{exp.role}</span>
                   <span className="exp-chevron" aria-hidden="true">
                     ›
                   </span>
@@ -219,6 +213,7 @@ function App() {
                   role="region"
                   aria-labelledby={`exp-${exp.id}-button`}
                 >
+                  <p className="exp-dates">{exp.dates}</p>
                   <p className="exp-detail">{exp.detail}</p>
                 </div>
               </div>
@@ -279,7 +274,7 @@ function App() {
   </a>
 
   <a
-    className="btn btn--primary"
+    className="btn"
     href="mailto:andrey.ivano22@gmail.com"
   >
     Email
